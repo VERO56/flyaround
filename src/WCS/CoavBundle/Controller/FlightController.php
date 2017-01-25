@@ -24,7 +24,7 @@ class FlightController extends Controller
 
         $flights = $em->getRepository('WCSCoavBundle:Flight')->findAll();
 
-        return $this->render('flight/index.html.twig', array(
+        return $this->render('WCSCoavBundle:flight:index.html.twig', array(
             'flights' => $flights,
         ));
     }
@@ -47,7 +47,7 @@ class FlightController extends Controller
             return $this->redirectToRoute('flight_show', array('id' => $flight->getId()));
         }
 
-        return $this->render('flight/new.html.twig', array(
+        return $this->render('WCSCoavBundle:flight:new.html.twig', array(
             'flight' => $flight,
             'form' => $form->createView(),
         ));
@@ -61,7 +61,7 @@ class FlightController extends Controller
     {
         $deleteForm = $this->createDeleteForm($flight);
 
-        return $this->render('flight/show.html.twig', array(
+        return $this->render('WCSCoavBundle:flight:show.html.twig', array(
             'flight' => $flight,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -85,7 +85,7 @@ class FlightController extends Controller
             return $this->redirectToRoute('flight_edit', array('id' => $flight->getId()));
         }
 
-        return $this->render('flight/edit.html.twig', array(
+        return $this->render('WCSCoavBundle:flight:edit.html.twig', array(
             'flight' => $flight,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),

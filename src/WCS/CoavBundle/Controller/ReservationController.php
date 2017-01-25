@@ -24,7 +24,7 @@ class ReservationController extends Controller
 
         $reservations = $em->getRepository('WCSCoavBundle:Reservation')->findAll();
 
-        return $this->render('reservation/index.html.twig', array(
+        return $this->render('WCSCoavBundle:reservation:index.html.twig', array(
             'reservations' => $reservations,
         ));
     }
@@ -47,7 +47,7 @@ class ReservationController extends Controller
             return $this->redirectToRoute('reservation_show', array('id' => $reservation->getId()));
         }
 
-        return $this->render('reservation/new.html.twig', array(
+        return $this->render('WCSCoavBundle:reservation:new.html.twig', array(
             'reservation' => $reservation,
             'form' => $form->createView(),
         ));
@@ -61,7 +61,7 @@ class ReservationController extends Controller
     {
         $deleteForm = $this->createDeleteForm($reservation);
 
-        return $this->render('reservation/show.html.twig', array(
+        return $this->render('WCSCoavBundle:reservation:show.html.twig', array(
             'reservation' => $reservation,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -85,7 +85,7 @@ class ReservationController extends Controller
             return $this->redirectToRoute('reservation_edit', array('id' => $reservation->getId()));
         }
 
-        return $this->render('reservation/edit.html.twig', array(
+        return $this->render('WCSCoavBundle:reservation:edit.html.twig', array(
             'reservation' => $reservation,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),

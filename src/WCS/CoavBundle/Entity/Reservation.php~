@@ -80,33 +80,4 @@ class Reservation
     {
         return $this->nbSeats;
     }
-    /**
-     * @var string
-     */
-    private $passengers;
-
-
-    /**
-     * Set passengers
-     *
-     * @param string $passengers
-     *
-     * @return Reservation
-     */
-    public function setPassengers($passengers)
-    {
-        $this->passengers = $passengers;
-
-        return $this;
-    }
-
-    /**
-     * Get passengers
-     *
-     * @return string
-     */
-    public function getPassengers()
-    {
-        return $this->passengers;
-    }
 }

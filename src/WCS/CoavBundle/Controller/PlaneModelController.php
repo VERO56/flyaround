@@ -24,7 +24,7 @@ class PlaneModelController extends Controller
 
         $planeModels = $em->getRepository('WCSCoavBundle:PlaneModel')->findAll();
 
-        return $this->render('planemodel/index.html.twig', array(
+        return $this->render('WCSCoavBundle:planemodel:index.html.twig', array(
             'planeModels' => $planeModels,
         ));
     }
@@ -47,7 +47,7 @@ class PlaneModelController extends Controller
             return $this->redirectToRoute('planemodel_show', array('id' => $planeModel->getId()));
         }
 
-        return $this->render('planemodel/new.html.twig', array(
+        return $this->render('WCSCoavBundle:planemodel:new.html.twig', array(
             'planeModel' => $planeModel,
             'form' => $form->createView(),
         ));
@@ -61,7 +61,7 @@ class PlaneModelController extends Controller
     {
         $deleteForm = $this->createDeleteForm($planeModel);
 
-        return $this->render('planemodel/show.html.twig', array(
+        return $this->render('WCSCoavBundle:planemodel:show.html.twig', array(
             'planeModel' => $planeModel,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -85,7 +85,7 @@ class PlaneModelController extends Controller
             return $this->redirectToRoute('planemodel_edit', array('id' => $planeModel->getId()));
         }
 
-        return $this->render('planemodel/edit.html.twig', array(
+        return $this->render('WCSCoavBundle:planemodel:edit.html.twig', array(
             'planeModel' => $planeModel,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
